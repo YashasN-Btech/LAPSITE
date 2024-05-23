@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:black; 
+    
+}
+
+h1,p {
+    color: orangered;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.container {
+    display: grid; /* Use CSS grid to layout the elements */
+    grid-template-columns: 450px 300px 300px; /* Define two columns, with the second column 300px wide */
+    padding-top: 50px;
+}
+.right-column{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.last-column{
+    padding-top: 120px;
+    font-size: xx-large;
+}
+
+label {
+    display: block;
+    margin: 10px 0 10px;
+    color: orangered;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0 10px;
+    color: orangered;
+    border-radius: 50px;
+    background-color: black;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: orangered;
+    color: black;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+}
+.right-column{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 10px;
+}
+.left-column{
+    font-size: larger
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    color: orangered;
+}
+
+li {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: black;
+    border: 1px solid orangered;
+}
+/* CSS file (e.g., style.css) */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    background-color: orangered;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+

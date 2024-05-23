@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LAPSITE</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+  
+  <div class="container">
+    <div class="left-coulmn">
+    <h1>Find Your Ideal Laptop</h1>
+    <form action="/suggest" method="post">
+      <label for="brand">Brand:</label>
+      <input type="text" id="brand" name="brand" required><br>
+      
+      <label for="min_ram">Minimum RAM (GB):</label>
+      <input type="number" id="min_ram" name="min_ram" required><br>
+      
+      <label for="max_price">Maximum Price (₹):</label>
+      <input type="number" id="max_price" name="max_price" required><br>
+      
+      <input type="submit" value="Suggest">
+    </div>
+     <div class="right-column">
+      <img src="{{ url_for('static', filename='bg4.jpg') }}" alt="img" class="img">
+     </div>
+    <div class="last-column">
+      <h1><Link:print></Link:print>LAPSITE</h1>
+      <p>- A Guide to Buy !</p>
+    </div>
+  </div>
+  
+    </form>
+  </body>
