@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>LAPSITE</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: black;
+      padding: 20px;
+      border: 1px solid rgb(51, 49, 49);
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+    }
+    body {
+    background-color: black; /* fallback color */
+    background-image: url('{{ url_for('static', filename='bg2.jpg') }}');
+    background-size: cover; /* or contain depending on your needs */
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; /* Set text color to white for better visibility */
+    }
+    
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-column">
+      <h1> LOGIN </h1>
+      <form id="login-form" action="/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        
+        <input type="submit" value="Login">
+      </form>
+      <div id="popup" class="popup">
+        <p style="color: red;">Invalid username or password. Please try again.</p>
+        <button id="popup-ok">OK</button>
+      </div>
+    </div>
+    
+    <div class="last-column1">
+      <h1>LAPSITE</h1>
+    </div>
+  </div>
+
+  <script>
+    // Show popup if login fails
+    {% if show_popup %}
+    document.getElementById('popup').style.display = 'block';
+    {% endif %}
+
+    // Hide popup when clicking on "OK" button
+    document.getElementById('popup-ok').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'none';
+    });
+    // Apply styles to the OK button
+    var okButton = document.getElementById('popup-ok');
+    okButton.style.padding = '10px 20px';
+    okButton.style.marginTop = '20px';
+    okButton.style.backgroundColor = 'orangered';
+    okButton.style.color = 'black';
+    okButton.style.fontSize = '20px';
+    okButton.style.border = 'none';
+    okButton.style.cursor = 'pointer';
+    okButton.style.borderRadius = '50px';
+  </script>
+</body>
+</html>
